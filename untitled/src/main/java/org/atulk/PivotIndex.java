@@ -12,6 +12,7 @@ public class PivotIndex {
             if(sum-leftSum-nums[i]==leftSum) return i;
         }
         return -1;
+
     }
 
     public static void main(String[] args) {
