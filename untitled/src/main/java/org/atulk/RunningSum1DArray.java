@@ -11,6 +11,22 @@ public class RunningSum1DArray {
         return res;
     }
 
+    public static int[] runningSumImproved(int[] nums) {
+        int[] ans = new int[nums.length];
+        ans[0] = nums[0];
+        for (int i = 1; i < nums.length; i++)
+            ans[i] = ans[i-1] + nums[i];
+        return ans;
+    }
+
+    public static int[] runningSumInPlace(int[] nums) {
+//        int[] ans = new int[nums.length];
+//        ans[0] = nums[0];
+        for (int i = 1; i < nums.length; i++)
+            nums[i] = nums[i-1] + nums[i];
+        return nums;
+    }
+
     public static void main(String[] args) {
         int[] test={1,2,3,4};
         int[] res = runningSum(test);
@@ -18,5 +34,14 @@ public class RunningSum1DArray {
             System.out.println(res[i]+ " ");
         }
 
+        res = runningSumImproved(test);
+        for(int i=0;i<res.length;i++) {
+            System.out.println(res[i]+ " ");
+        }
+
+        res = runningSumInPlace(test);
+        for(int i=0;i<res.length;i++) {
+            System.out.println(res[i]+ " ");
+        }
     }
 }
